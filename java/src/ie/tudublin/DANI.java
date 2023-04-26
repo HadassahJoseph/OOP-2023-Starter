@@ -8,23 +8,6 @@ import processing.core.PApplet;
 public class DANI extends PApplet {
 
 	
-
-	//Make a class called Word that has fields for the word (a String) and an ArrayList of type Follow as fields. 
-	//The Follow class has fields for the word (a String) and a count (an int).
-	public class Word
-	{
-		String name;
-		ArrayList<Follow> follow = new ArrayList<Follow>();
-
-		public Word(String name, ArrayList<Follow> follow) {
-			this.name = name;
-			this.follow = follow;
-	   }
-
-	}
-
-//Write a method on DANI.java called loadFile. Its purpose is to load the document into the model.
-
 	void loadFile(String w, String s)
 	{
 		String[] string = loadStrings("java/data/small.txt");	
@@ -42,28 +25,25 @@ public class DANI extends PApplet {
 	}
 
 
-	void findWord (String w, String s)
+	void findWord ()
 	{
-		String[] follow;
-		for (String f : follow ){
+		ArrayList<Word> word;
+		for (Word w : word)
+		{
 			if (w == null)
 			{
-				follow.add(null);
+				word.add(null);
 			}
 			else
 			{
-				follow.add(w);
+				word.addAll(w);
 			}
 		
 		}
 
-
 	}
 
-	
 	//you will find it helpful to write a method called findFollow(str) on the Word class You can make these methods return null if there is no match.
-
-	
 	void findFollow(String s,String w )
 	{
 		ArrayList<Follow> follow;
@@ -91,28 +71,37 @@ public class DANI extends PApplet {
 	}
 
 	
-	void printModel()
-	{
-		Follow[] follow;
-		for(Follow f : follow)
-		{
-			System.out.println(f);
-		}
-	}
-
-
-
 	
 
-
-	public class Follow
+	public class Word
 	{
 		String name;
-		int Count;
+		ArrayList<Follow> follow = new ArrayList<Follow>();
 
-		public Follow(String name, int Count) {
+		public Word(String name, ArrayList<Follow> follow) {
 			this.name = name;
-			this.Count = Count;
+			this.follow = follow;
+		}
+
+		@Override
+		public String toString() {
+			return "Word [follow=" + follow + ", name=" + name + "]";
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public ArrayList<Follow> getFollow() {
+			return follow;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public void setFollow(ArrayList<Follow> follow) {
+			this.follow = follow;
 		}
 	}
 

@@ -11,5 +11,34 @@ public class Word {
          this.name = name;
          this.follow = follow;
     }
+
+    @Override
+    public String toString() {
+        return "Word [follow=" + follow + ", name=" + name + "]";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Follow> getFollow() {
+        return follow;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFollow(ArrayList<Follow> follow) {
+        this.follow = follow;
+    }
+
+
+
+    
+
+
     
 }
+
+     
