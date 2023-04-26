@@ -8,23 +8,21 @@ import processing.core.PApplet;
 public class DANI extends PApplet {
 
 	
-	void loadFile(String w, String s)
+	void loadFile()
 	{
-		String[] string = loadStrings("java/data/small.txt");	
-		String line;
-		for ( String follow : split(line, ' '))
+		String[] lines = loadStrings("java/data/small.txt");	
+		for ( String line : lines)
 		{
-			follow.replaceAll("[^\\w\\s]","");
-			follow.toLowerCase();
-
+			String[] words = line.split(" ");
+			for( String w : words )
+			{
+				w.replaceAll("[^\\w\\s]","");
+				w.toLowerCase();
+			}
 		}
-		/*{
-			w.replaceAll("[^\\w\\s]","");
-			s.toLowerCase();
-		}*/	
+
 	}
-
-
+		
 	void findWord ()
 	{
 		ArrayList<Word> word;
@@ -73,37 +71,6 @@ public class DANI extends PApplet {
 	
 	
 
-	public class Word
-	{
-		String name;
-		ArrayList<Follow> follow = new ArrayList<Follow>();
-
-		public Word(String name, ArrayList<Follow> follow) {
-			this.name = name;
-			this.follow = follow;
-		}
-
-		@Override
-		public String toString() {
-			return "Word [follow=" + follow + ", name=" + name + "]";
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public ArrayList<Follow> getFollow() {
-			return follow;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public void setFollow(ArrayList<Follow> follow) {
-			this.follow = follow;
-		}
-	}
 
 	public String[] writeSonnet()
 	{
