@@ -1,12 +1,129 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
+import processing.data.Table;
+import processing.data.TableRow;
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
 
 	
+
+	//Make a class called Word that has fields for the word (a String) and an ArrayList of type Follow as fields. 
+	//The Follow class has fields for the word (a String) and a count (an int).
+	public class Word
+	{
+		String name;
+		ArrayList<Follow> follow = new ArrayList<Follow>();
+
+		public Word(String name, ArrayList<Follow> follow) {
+			this.name = name;
+			this.follow = follow;
+	   }
+
+	}
+
+//Write a method on DANI.java called loadFile. Its purpose is to load the document into the model.
+
+	void loadFile(String w, String s)
+	{
+		String[] string = loadStrings("java/data/small.txt");	
+		String line;
+		for ( String follow : split(line, ' '))
+		{
+			follow.replaceAll("[^\\w\\s]","");
+			follow.toLowerCase();
+
+		}
+		/*{
+			w.replaceAll("[^\\w\\s]","");
+			s.toLowerCase();
+		}*/	
+	}
+
+
+	void findWord (String w, String s)
+	{
+		String[] follow;
+		for (String f : follow ){
+			if (w == null)
+			{
+				follow.add(null);
+			}
+			else
+			{
+				follow.add(w);
+			}
+		
+		}
+
+
+	}
+
+	
+	//you will find it helpful to write a method called findFollow(str) on the Word class You can make these methods return null if there is no match.
+
+	
+	void findFollow(String s,String w )
+	{
+		ArrayList<Follow> follow;
+		for (Follow f : follow)
+		{
+			if (s == null)
+			{
+				follow.add(null);
+			}
+			else
+			{
+				follow.addAll(s);
+			}
+		}
+	}
+
+	//Write a method called printModel that prints out the model. It should print out each word and its follows. 
+	//You can use the toString method on the ArrayList to print it out.
+	void printModel()
+	{
+		for(Word w:word)
+		{
+			System.out.println(w);
+		}
+	}
+
+	
+	void printModel()
+	{
+		Follow[] follow;
+		for(Follow f : follow)
+		{
+			System.out.println(f);
+		}
+	}
+
+
+
+	
+
+
+	public class Follow
+	{
+		String name;
+		int Count;
+
+		public Follow(String name, int Count) {
+			this.name = name;
+			this.Count = Count;
+		}
+	}
+
+	
+
+
+	
+
+	
+	
+
 
 	public void settings() {
 		size(1000, 1000);
