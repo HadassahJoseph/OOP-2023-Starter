@@ -23,7 +23,14 @@ public class DANI extends PApplet {
 
 	}*/
 
-	
+	//rite a method on DANI.java called loadFile.
+
+	/* 
+	loadStrings("filename.txt"); // Load a text file into a String array
+ split(line, ' '); // Split a string into an array of words
+ w.replaceAll("[^\\w\\s]",""); // Remove punction characters
+ s.toLowerCase() // Convert a string to lower case 
+  */
 	public void loadFile() {
         String[] lines = loadStrings("small.txt");
         for (String line : lines) {
@@ -59,7 +66,7 @@ public class DANI extends PApplet {
     }
 
 		
-
+//a method called findWord(str) that finds a word in the model so you can check if it already exists.
 	void findWord ()
 	{
 		ArrayList<Word> word;
@@ -97,9 +104,10 @@ public class DANI extends PApplet {
 		}
 	}
 
-	//Write a method called printModel that prints out the model. It should print out each word and its follows. 
-	//You can use the toString method on the ArrayList to print it out.
+
 	
+
+	//Write a method called printModel() that prints the model
 	void printModel()
 	{
 		
@@ -117,7 +125,7 @@ public class DANI extends PApplet {
 	
 
 
-	
+	//Write a method on DANI called writeSonnet that returns a 14 line sonnet using the algorithm outlined at the start. 
 	public String[] writeSonnet() {
 		String[] sonnet = new String[14];
 		for (int i = 0; i < sonnet.length; i++) {
@@ -197,6 +205,24 @@ public class DANI extends PApplet {
 
 	public void keyPressed() {
 
+		if (keyCode == LEFT) {
+			rigth sonnet;
+		}
+		if (keyCode == RIGHT) {
+			left sonnet;
+		}
+		if (keyCode == ' ')
+		{
+			if ()
+			{
+				
+			}
+			else
+			{
+				
+			}
+		}
+
 	}
 
 	float off = 0;
@@ -210,4 +236,12 @@ public class DANI extends PApplet {
         textAlign(CENTER, CENTER);
         
 	}
+
+	public void drawSonnets()
+    {
+        for(Follow f : follow)
+        {
+            f.render(this);
+        }
+    }
 }
