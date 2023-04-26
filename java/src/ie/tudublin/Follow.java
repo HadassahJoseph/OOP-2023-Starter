@@ -33,7 +33,11 @@ public class Follow {
         Count = count;
     }
 
-    
+    public Object getWord() {
+        return null;
+    }
+
+
 
 
 

@@ -6,6 +6,7 @@ public class Word {
     String name;
 
     ArrayList<Follow> follow = new ArrayList<Follow>();
+    
    
     public Word(String name, ArrayList<Follow> follow) {
          this.name = name;
@@ -31,6 +32,10 @@ public class Word {
 
     public void setFollow(ArrayList<Follow> follow) {
         this.follow = follow;
+    }
+
+    public Object getWord() {
+        return null;
     }
 
 
