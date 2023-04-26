@@ -105,13 +105,11 @@ public class DANI extends PApplet {
 		}
 	}
 
-	
+	public String[] writeSonnet()
+	{
+		return null;
+	}
 
-
-	
-
-	
-	
 
 
 	public void settings() {
